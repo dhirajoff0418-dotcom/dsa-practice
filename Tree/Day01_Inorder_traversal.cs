@@ -25,6 +25,21 @@ namespace DailyDsa.Tree
             Console.Write(root.Data + " ");
             Inorder(root.Right);
         }
+        internal static void PreOrder(Node root)
+        {
+            if(root == null) return;
+            Console.Write(root.Data + " ");
+            PreOrder(root.Left);
+            PreOrder(root.Right);
+        }
+
+        internal static void PostOrder(Node root)
+        {
+            if (root == null) return;
+            PostOrder(root.Right);
+            PostOrder(root.Left);
+            Console.Write(root.Data + " ");
+        }
 
         internal static void Run()
         {
@@ -36,6 +51,12 @@ namespace DailyDsa.Tree
 
             Console.WriteLine("Inorder Traversal:");
             Inorder(root);
+
+            Console.WriteLine("PreOrder Traversal:");
+            PreOrder(root);
+
+            Console.WriteLine("PostOrder Traversal:");
+            PostOrder(root);
         }
     }
 }
